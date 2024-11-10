@@ -1,11 +1,14 @@
 <?php
 session_start();
 include('backend/database.php');
+include('functions.php');
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
+
+$contacts = fetchContacts($conn); // Kontakte laden
 
 ?>
 
