@@ -22,6 +22,17 @@ $contacts = fetchContacts($conn); // Kontakte laden
     <a href="logout.php" class="btn btn-outline-dark">Ausloggen</a>
 </div>
 
+<script>
+    function update_contact(id) {
+        $("#updateContactModal").modal("show");
+        const fields = ['Name', 'Phone', 'Email', 'Address'];
+        fields.forEach(field => {
+            $("#updateContact" + field).val($("#contact" + field + "-" + id).text());
+        });
+        $("#updateContactId").val(id);
+    }
+</script>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>

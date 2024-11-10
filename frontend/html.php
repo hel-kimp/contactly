@@ -99,6 +99,42 @@
     </div>
 </div>
 
+<!-- Fenster für Kontakt aktualisieren -->
+<div class="modal fade" id="updateContactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="contactModalLabel">Aktualisieren</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="frontend/crud/update.php" method="POST" class="add-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="updateContactName">Name</label>
+                        <input type="text" class="form-control" id="updateContactName" name="contact_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateContactPhone">Telefonnummer</label>
+                        <input type="text" class="form-control" id="updateContactPhone" name="contact_phone" maxlength="15" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateContactEmail">E-mail</label>
+                        <input type="email" class="form-control" id="updateContactEmail" name="contact_email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateContactAddress">Adresse</label>
+                        <input type="text" class="form-control" id="updateContactAddress" name="contact_address" required>
+                    </div>
+                    <input type="hidden" name="contact_id" id="updateContactId"> <!-- Verstecktes Feld für die Kontakt-ID -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                        <button type="submit" class="btn btn-dark">Aktualisieren</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
