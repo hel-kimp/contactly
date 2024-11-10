@@ -31,6 +31,12 @@ $contacts = fetchContacts($conn); // Kontakte laden
         });
         $("#updateContactId").val(id);
     }
+
+    function delete_contact(id) {
+        if (confirm("Willst du diesen Kontakt wirklich löschen?")) {
+            window.location = "frontend/crud/delete.php?contact=" + id;
+        }
+    }
 </script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
