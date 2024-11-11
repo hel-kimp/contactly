@@ -14,12 +14,23 @@
     <h3>Contactly</h3>
 </div> 
 
-<!-- Hinzufügen Button -->
-<div class="col-md-4 text-end">
-    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addContactModal">
-    <i class="fa-regular fa-user"></i>&nbsp;Kontakt hinzufügen
-    </button>
- </div>
+
+<div class="row mb-3">
+        <!-- Sucheingabe -->
+        <div class="col-md-8">
+            <form method="GET" action="">
+                <div class="input-group">
+                    <input type="text" name="search" value="<?= htmlspecialchars($search) ?>" class="form-control" placeholder="Kontakte durchsuchen...">
+                    <button type="submit" class="btn btn-dark">Suchen</button>
+                </div>
+            </form>
+        </div>
+        <!-- Hinzufügen Button -->
+        <div class="col-md-4 text-end">
+            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addContactModal">
+            <i class="fa-regular fa-user"></i>&nbsp;Kontakt hinzufügen
+            </button>
+        </div>
 
 <!-- Kontakte Tabelle -->
      <div class="main mt-3">

@@ -8,7 +8,29 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+$search = ''; // Standardwert für Sucheingabe
+if (isset($_GET['search'])) {
+    $search = $_GET['search'];
+}
+
 $contacts = fetchContacts($conn); // Kontakte laden
+
+// Kontakte nach Suchanfrage filtern
+if (!empty($search)) {
+    $contacts = array_filter($contacts, function ($contact) use ($search) {
+        return stripos($contact['contact_name'], $search) !== false || 
+               stripos($contact['contact_phone'], $search) !== false || 
+               stripos($contact['contact_email'], $search) !== false || 
+               stripos($contact['contact_address'], $search) !== false;
+    });
+}
+
+// Kontakte alphabetisch sortieren
+usort($contacts, function ($a, $b) {
+    return strcmp($a['contact_name'], $b['contact_name']);
+});
+
+$error = '';
 
 ?>
 
