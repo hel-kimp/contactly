@@ -1,0 +1,15 @@
+contactly
+   ├── backend
+   │    ├── database.php             # Datenbankverbindung
+   │    └── vcard.php                # Erzeugung/Verarbeitung von vCards
+   ├── frontend
+   │    ├── crud
+   │    │     └── add.php            # Kontakt hinzufügen
+   │    │     └── delete.php         # Kontakt löschen
+   │    │     └── update.php         # Kontakt aktualisieren
+   │    └── html.php                 # HTML und Modale
+   │
+   ├── index.php                     # Startseite
+   ├── login.php                     # Login-Seite
+   ├── logout.php                    # Logout-Seite 
+   ├── functions.php                 # Funktionen 
